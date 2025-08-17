@@ -145,7 +145,7 @@ export async function initCalendar() {
     schedules = data.schedules;
     slots = data.slots;
 
-    renderCalendar(currentDate.getMonth(), currentDate.getFullYear());
+    renderCalendar(9, 2025);
 
     document.getElementById('prevMonth').addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
