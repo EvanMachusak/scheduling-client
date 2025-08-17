@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 40px;
+            /* space between calendar and panel */
+        }
+
+        .calendar {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 60px;
+            height: 60px;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        .controls {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+
+        td {
+            cursor: pointer;
+        }
+
+        /* New slot details panel */
+        .slots-panel {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .slots-panel ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .slots-panel li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calendar">
+        <div class="controls">
+            <button id="prevMonth">◀</button>
+            <span id="monthYear"></span>
+            <button id="nextMonth">▶</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody"></tbody>
+        </table>
+    </div>
+
+    <!-- New slot details panel -->
+    <div class="slots-panel">
+        <h3>Available Slots</h3>
+        <ul id="slotList"></ul>
+    </div>
+
+    <script type="module">
+        import { initCalendar } from './calendar.js';
+        initCalendar();
+    </script>
+
+</body>
+
+</html>
